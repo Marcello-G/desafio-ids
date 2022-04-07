@@ -1,0 +1,35 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Desafio1 {
+    public static void main(String[] args){
+        Map<String, Integer> dictionary = new HashMap<>();
+        Scanner input = new Scanner(System.in);
+        String word;
+        int score = 0;
+        dictionary.put("AEIOULNRST", 1);
+        dictionary.put("DG", 2);
+        dictionary.put("BCMP", 3);
+        dictionary.put("FHVWY", 4);
+        dictionary.put("K", 5);
+        dictionary.put("JX", 8);
+        dictionary.put("QZ", 10);
+        System.out.print("Digite uma palavra qualquer: ");
+        word = input.next().toUpperCase();
+        input.close();
+        for(int i = 0; i < word.length(); i++){
+            char character = word.charAt(i);
+
+            for(Map.Entry<String, Integer> set : dictionary.entrySet()){
+            for(Map.Entry<String, Integer> set : dictionary.entrySet()){
+                if(set.getKey().contains(Character.toString(character))){
+                    score += set.getValue();
+                    break;
+                }
+            }
+
+        }
+        System.out.println("A soma das letras foi: " + score);
+    }
+}
